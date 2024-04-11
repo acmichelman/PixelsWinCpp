@@ -6,6 +6,7 @@
 
 #include "Systemic/Pixels/PixelScanner.h"
 #include "Systemic/Pixels/Pixel.h"
+#include "Systemic/Pixels/DiceUtils.h"
 
 using namespace Systemic::Pixels;
 using namespace Systemic::Pixels::Messages;
@@ -33,7 +34,7 @@ std::string to_string(PixelStatus status)
 }
 
 std::string serializeTimePoint(const std::chrono::system_clock::time_point& time, const std::string& format);
-void printPixelMessage(std::shared_ptr<const PixelMessage> message);
+void printPixelMessage(std::shared_ptr<const Pixel> pixel, std::shared_ptr<const PixelMessage> message);
 
 // Pixel delegate that output Pixel events to the console
 struct MyDelegate : PixelDelegate
@@ -63,7 +64,7 @@ struct MyDelegate : PixelDelegate
         std::cout << std::string{ "\nBattery is" } + (isCharging ? "" : " not") + " charging";
     }
 
-    virtual void onRollStateChanged(std::shared_ptr<Pixel> pixel, PixelRollState state, int face) override
+    virtual void onRollStateChanged(std::shared_ptr<Pixel> pixel, PixelRollState state, int face, int /* faceIndex */) override
     {
         std::cout << "\nRoll state changed to " + to_string((int)state) + " with face " + to_string(face) + " up";
     }
@@ -75,7 +76,7 @@ struct MyDelegate : PixelDelegate
 
     //virtual void onMessageReceived(std::shared_ptr<Pixel> pixel, std::shared_ptr<const PixelMessage> message) override
     //{
-    //	printPixelMessage(message);
+    //	printPixelMessage(pixel, message);
     //}
 };
 
@@ -175,7 +176,7 @@ int main()
     }
 }
 
-void printPixelMessage(std::shared_ptr<const PixelMessage> message)
+void printPixelMessage(std::shared_ptr<const Pixel> pixel, std::shared_ptr<const PixelMessage> message)
 {
     std::stringstream ss{};
     switch (message->type)
@@ -191,7 +192,7 @@ void printPixelMessage(std::shared_ptr<const PixelMessage> message)
     case MessageType::RollState: {
         const auto m = static_cast<const RollState*>(message.get());
         ss << "RollState => state=" << (int)m->state
-            << ", face=" << ((int)m->faceIndex + 1);
+            << ", face=" << (DiceUtils::getFaceFromIndex(m->faceIndex, pixel->dieType()));
     } break;
     case MessageType::BatteryLevel: {
         const auto m = static_cast<const BatteryLevel*>(message.get());

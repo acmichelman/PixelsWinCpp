@@ -59,10 +59,16 @@ namespace Systemic::Pixels
         virtual int ledCount() const = 0;
 
         /**
-         * @brief Gets the design and color of the Pixel.
-         * @return The design and color of the Pixel.
+         * @brief Gets the color of the Pixel.
+         * @return The color of the Pixel.
          */
-        virtual PixelDesignAndColor designAndColor() const = 0;
+        virtual PixelColorway colorway() const = 0;
+
+        /**
+         * @brief Gets die type of the Pixel.
+         * @return The Pixel type.
+         */
+        virtual PixelDieType dieType() const = 0;
 
         /**
          * @brief Gets the firmware build date of the Pixel.
@@ -96,16 +102,16 @@ namespace Systemic::Pixels
         virtual PixelRollState rollState() const = 0;
 
         /**
-         * @brief Gets the Pixel face value that is currently facing up.
-         * @return The Pixel face value that is currently facing up.
+         * @brief Gets the value of the die face that is currently facing up.
+         * @return The value of the die face that is currently facing up.
          */
         virtual int currentFace() const = 0;
 
         /**
-         * @brief Gets die type of the Pixel.
-         * @return The Pixel type.
+         * @brief Gets the index of the die face that is currently facing up.
+         * @return The index of the die face that is currently facing up.
          */
-        DieType dieType();
+        virtual int currentFaceIndex() const = 0;
 
         /**
          * @brief Gets the number of faces of the Pixel.

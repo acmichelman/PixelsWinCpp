@@ -113,7 +113,7 @@
     <ClInclude Include="Systemic\Internal\GuardedList.h" />
     <ClInclude Include="Systemic\Internal\Logger.h" />
     <ClInclude Include="Systemic\Internal\Utils.h" />
-    <ClInclude Include="Systemic\Pixels\Helpers.h" />
+    <ClInclude Include="Systemic\Pixels\DiceUtils.h" />
     <ClInclude Include="Systemic\Pixels\Messages.h" />
     <ClInclude Include="Systemic\Pixels\MessageSerialization.h" />
     <ClInclude Include="Systemic\Pixels\Pixel.h" />

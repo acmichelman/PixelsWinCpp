@@ -22,29 +22,38 @@ namespace Systemic::Pixels
     /// Type for a Pixel Id.
     using pixel_id_t = uint32_t;
 
-    /// Available combinations of Pixel designs and colors.
-    enum class PixelDesignAndColor : uint8_t
+    /// The different types of dice.
+    enum class PixelDieType : uint8_t
     {
-        Unknown,
-        Generic,
-        V3Orange,
-        V4BlackClear,
-        V4WhiteClear,
-        V5Grey,
-        V5White,
-        V5Black,
-        V5Gold,
+        Unknown = 0,
+        D4,
+        D6,
+        D8,
+        D10,
+        D00,
+        D12,
+        D20,
+        D6Pipped,
+        D6Fudge,
+    };
+
+    /// Available Pixels dice colorways.
+    enum class PixelColorway: uint8_t
+    {
+        Unknown = 0,
         OnyxBlack,
         HematiteGrey,
         MidnightGalaxy,
         AuroraSky,
+        Clear,
+        Custom = 0xFF,
     };
 
     /// Pixel roll states.
     enum class PixelRollState : uint8_t
     {
         /// The Pixel roll state could not be determined.
-        Unknown,
+        Unknown = 0,
 
         /// The Pixel is resting in a position with a face up.
         OnFace,
@@ -63,7 +72,7 @@ namespace Systemic::Pixels
     enum class PixelBatteryState : uint8_t
     {
         /// Battery looks fine, nothing is happening.
-        Ok,
+        Ok = 0,
 
         /// Battery level is low, notify user they should recharge.
         Low,
@@ -80,18 +89,5 @@ namespace Systemic::Pixels
 
         /// Charge state doesn't make sense (charging but no coil voltage detected for instance).
         Error,
-    };
-
-    /// The different types of dice.
-    enum class DieType
-    {
-        D20,
-        D12,
-        D10,
-        D8,
-        D6,
-        D6Pipped,
-        D6Fudge,
-        D4,
     };
 }

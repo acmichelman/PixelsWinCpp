@@ -108,12 +108,11 @@ namespace Systemic::Pixels::Messages
         /// Number of LEDs.
         uint8_t ledCount{};
 
-        /// Die look.
-        PixelDesignAndColor designAndColor{};
+        /// Die color.
+        PixelColorway colorway{};
 
-    private:
-        uint8_t _padding{};
-    public:
+        /// Type of die.
+        PixelDieType dieType{};
 
         /// Hash of the uploaded profile.
         uint32_t dataSetHash{};
@@ -132,7 +131,7 @@ namespace Systemic::Pixels::Messages
         /// Current roll state.
         PixelRollState rollState{};
 
-        /// Face index (if applicable), starts at 0.
+        /// Index of the face that is currently facing up.
         uint8_t currentFaceIndex{};
 
         // Battery level
@@ -180,8 +179,8 @@ namespace Systemic::Pixels::Messages
         /// Amount of in and out fading, 0: sharp transition, 255: max fading.
         uint8_t fade{};
 
-        /// Whether to indefinitely loop the animation.
-        uint8_t loop{};
+        /// How many times to loop the animation.
+        uint8_t loopCount{};
 
         /// Initializes a new instance of Blink.
         Blink() : PixelMessage(MessageType::Blink) {}

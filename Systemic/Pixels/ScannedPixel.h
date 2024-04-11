@@ -31,8 +31,11 @@ namespace Systemic::Pixels
         /// The number of LEDs of the Pixel.
         int ledCount{};
 
-        /// The Pixel design and color.
-        PixelDesignAndColor designAndColor{};
+        /// The Pixel color.
+        PixelColorway colorway{};
+
+        /// The Pixel die type.
+        PixelDieType dieType{};
 
         /// The firmware build date of the Pixel.
         Date firmwareDate{};
@@ -50,8 +53,11 @@ namespace Systemic::Pixels
         /// The Pixel roll state.
         PixelRollState rollState{};
 
-        /// The Pixel face value that is currently facing up.
+        /// The value of the die face that is currently facing up.
         int currentFace{};
+
+        /// The index of the die face that is currently facing up.
+        int currentFaceIndex{};
     };
 
     /// Data periodically emitted by a Pixel when not connected to a device.
@@ -95,9 +101,14 @@ namespace Systemic::Pixels
             return data.ledCount;
         }
 
-        virtual PixelDesignAndColor designAndColor() const override
+        virtual PixelColorway colorway() const override
         {
-            return data.designAndColor;
+            return data.colorway;
+        }
+
+        virtual PixelDieType dieType() const override
+        {
+            return data.dieType;
         }
 
         virtual Date firmwareDate() const override
@@ -128,6 +139,11 @@ namespace Systemic::Pixels
         virtual int currentFace() const override
         {
             return data.currentFace;
+        }
+
+        virtual int currentFaceIndex() const override
+        {
+            return data.currentFaceIndex;
         }
     };
 }

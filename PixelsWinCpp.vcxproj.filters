@@ -62,7 +62,7 @@
     <ClInclude Include="Systemic\Internal\Utils.h">
       <Filter>Header Files\Systemic\Internal</Filter>
     </ClInclude>
-    <ClInclude Include="Systemic\Pixels\Helpers.h">
+    <ClInclude Include="Systemic\Pixels\DiceUtils.h">
       <Filter>Header Files\Systemic\Pixels</Filter>
     </ClInclude>
     <ClInclude Include="Systemic\Pixels\Messages.h">

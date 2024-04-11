@@ -6,7 +6,7 @@
 #include "Systemic/BluetoothLE/ScannedPeripheral.h"
 #include "Systemic/Pixels/ScannedPixel.h"
 #include "Systemic/Pixels/PixelBleUuids.h"
-#include "Systemic/Pixels/Helpers.h"
+#include "Systemic/Pixels/DiceUtils.h"
 
 namespace
 {
@@ -37,7 +37,7 @@ namespace
                 struct
                 {
                     uint8_t ledCount{};
-                    PixelDesignAndColor designAndColor{};
+                    uint8_t colorwayAndDieType{};
                     PixelRollState rollState{};
                     uint8_t currentFaceIndex{};
                     uint8_t battery{};
@@ -49,12 +49,14 @@ namespace
                 data.rssi = p->rssi();
 
                 data.pixelId = info1.pixelId;
-                data.firmwareDate = Helpers::getFirmwareDate(info1.buildTimestamp);
+                data.firmwareDate = DiceUtils::getFirmwareDate(info1.buildTimestamp);
 
                 data.ledCount = info2.ledCount;
-                data.designAndColor = info2.designAndColor;
+                data.colorway = static_cast<PixelColorway>(info2.colorwayAndDieType & 0x0F);
+                data.dieType = static_cast<PixelDieType>((info2.colorwayAndDieType >> 4) & 0x0F);
                 data.rollState = info2.rollState;
-                data.currentFace = info2.currentFaceIndex + 1;
+                data.currentFace = DiceUtils::getFaceFromIndex(info2.currentFaceIndex, data.dieType);
+                data.currentFaceIndex = info2.currentFaceIndex;
                 // MSB is battery charging
                 data.batteryLevel = info2.battery & 0x7f;
                 data.isCharging = (info2.battery & 0x80) > 0;

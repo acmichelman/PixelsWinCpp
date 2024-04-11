@@ -61,7 +61,7 @@ namespace Systemic::Pixels
         virtual void onChargingStateChanged(std::shared_ptr<Pixel> pixel, bool isCharging) {}
 
         /// Called when the Pixel roll state changes.
-        virtual void onRollStateChanged(std::shared_ptr<Pixel> pixel, PixelRollState state, int face) {}
+        virtual void onRollStateChanged(std::shared_ptr<Pixel> pixel, PixelRollState state, int face, int faceIndex) {}
 
         /// Called just after the Pixel was rolled.
         virtual void onRolled(std::shared_ptr<Pixel> pixel, int face) {}
@@ -206,9 +206,14 @@ namespace Systemic::Pixels
             return _data.ledCount;
         }
 
-        virtual PixelDesignAndColor designAndColor() const override
+        virtual PixelColorway colorway() const override
         {
-            return _data.designAndColor;
+            return _data.colorway;
+        }
+
+        virtual PixelDieType dieType() const override
+        {
+            return _data.dieType;
         }
 
         virtual Date firmwareDate() const override
@@ -239,6 +244,11 @@ namespace Systemic::Pixels
         virtual int currentFace() const override
         {
             return _data.currentFace;
+        }
+
+        virtual int currentFaceIndex() const override
+        {
+            return _data.currentFaceIndex;
         }
 
         /**
@@ -395,7 +405,7 @@ namespace Systemic::Pixels
             msg.color = rgbColor;
             msg.faceMask = 0xFFFF;
             down_cast(msg.fade, 255 * fade);
-            msg.loop = 0;
+            msg.loopCount = 1;
             // TODO return sendAndWaitForResponseAsync(msg, Messages::MessageType::BlinkAck);
             return sendMessageAsync(msg);
         }
