@@ -16,11 +16,11 @@ namespace Systemic::Pixels
     using bluetooth_address_t = Systemic::BluetoothLE::bluetooth_address_t;
 
     /// Common accessible values between Pixel advertised data and a connected Pixel.
-    class PixelInfo
+    class PixelInfo : public std::enable_shared_from_this<PixelInfo>
     {
     protected:
         PixelInfo() = default;
-        virtual ~PixelInfo() = default;
+        ~PixelInfo() = default;
 
     public:
         /// Type for a system Date.

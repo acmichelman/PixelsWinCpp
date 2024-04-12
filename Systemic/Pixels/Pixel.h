@@ -82,7 +82,7 @@ namespace Systemic::Pixels
      *
      * This class is thread safe.
      */
-    class Pixel : public std::enable_shared_from_this<Pixel>, public PixelInfo
+    class Pixel : public PixelInfo
     {
         using StatusCallback = std::function<void(PixelStatus)>;
         using MessageCallback = std::function<void(std::shared_ptr<const Messages::PixelMessage>)>;
@@ -162,6 +162,17 @@ namespace Systemic::Pixels
          * @brief Default virtual destructor.
          */
         virtual ~Pixel() = default;
+
+        /**
+        * @brief Returns a std::shared_ptr which shares ownership of *this.
+        * @return std::shared_ptr<Pixel> that shares ownership of *this with pre-existing std::shared_ptr.
+        */
+        _NODISCARD std::shared_ptr<Pixel> shared_from_this() {
+            return std::static_pointer_cast<Pixel>(PixelInfo::shared_from_this());
+        }
+        _NODISCARD std::shared_ptr<const Pixel> shared_from_this() const {
+            return std::static_pointer_cast<const Pixel>(PixelInfo::shared_from_this());
+        }
 
         /**
          * @brief Gets the last known connection status of the Pixel.
