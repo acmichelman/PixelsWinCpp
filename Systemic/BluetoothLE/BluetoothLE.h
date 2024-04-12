@@ -11,7 +11,7 @@ namespace Systemic::BluetoothLE
     enum class BleAdapterState
     {
         /// The system doesn't have a compatible Bluetooth adapter.
-        Unsupported,
+        Unsupported = 0,
 
         /// The radio of the default Bluetooth adapter is in a uncontrollable state.
         Unavailable,

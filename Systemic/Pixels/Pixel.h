@@ -29,7 +29,7 @@ namespace Systemic::Pixels
     /// The different possible connection statuses of a Pixel.
     enum class PixelStatus
     {
-        Disconnected,
+        Disconnected = 0,
         Connecting,
         Identifying,
         Ready,

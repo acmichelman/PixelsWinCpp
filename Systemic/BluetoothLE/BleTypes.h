@@ -43,7 +43,7 @@ namespace Systemic::BluetoothLE
     enum class BleRequestStatus
     {
         /// The request completed successfully.
-        Success,
+        Success = 0,
 
         /// The request completed with a non-specific error.
         Error,

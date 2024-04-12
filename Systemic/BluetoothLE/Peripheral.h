@@ -15,7 +15,7 @@ namespace Systemic::BluetoothLE
     enum class ConnectionEvent
     {
         /// Raised at the beginning of the connect sequence and is followed either by Connected or FailedToConnect.
-        Connecting,
+        Connecting = 0,
 
         /// Raised once the peripheral is connected, just before services are being discovered.
         Connected,
