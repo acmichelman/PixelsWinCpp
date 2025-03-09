@@ -1,4 +1,5 @@
 <map id="Systemic/Pixels/PixelTypes.h" name="Systemic/Pixels/PixelTypes.h">
-<area shape="rect" id="node1" title="Common types used across the Systemic::Pixel namespace." alt="" coords="5,5,197,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="71,79,132,104"/>
+<area shape="rect" id="Node000001" title="Common types used across the Systemic::Pixel namespace." alt="" coords="5,5,197,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="71,79,131,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,31,104,63,98,63,98,31"/>
 </map>

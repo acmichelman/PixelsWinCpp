@@ -1,6 +1,6 @@
 var _pixel_types_8h =
 [
-    [ "pixel_id_t", "_pixel_types_8h.html#a6b2699b76d7cbe1c8f369b9ce53bae4b", null ],
+    [ "pixel_id_t", "_pixel_types_8h.html#a683b72d36a73279afede3b5fd6252537", null ],
     [ "DieType", "_pixel_types_8h.html#ad58262cfd4178cf2d51ac585f734d732", [
       [ "D20", "_pixel_types_8h.html#ad58262cfd4178cf2d51ac585f734d732aec01fa9a3aeeeeabff7ae3bebc738a91", null ],
       [ "D12", "_pixel_types_8h.html#ad58262cfd4178cf2d51ac585f734d732a75b573a2a80f7d1f54f711b89d1a80fa", null ],

@@ -1,6 +1,6 @@
 var _ble_types_8h =
 [
-    [ "bluetooth_address_t", "_ble_types_8h.html#ab4c3d4a45c42df83461f2198f5c35773", null ],
+    [ "bluetooth_address_t", "_ble_types_8h.html#a4dcd66515620bd8dc794c6461d5312c1", null ],
     [ "BleRequestStatus", "_ble_types_8h.html#ac1603adad69e83af9fb9eb2c57761449", [
       [ "Success", "_ble_types_8h.html#ac1603adad69e83af9fb9eb2c57761449a505a83f220c02df2f85c3810cd9ceb38", null ],
       [ "Error", "_ble_types_8h.html#ac1603adad69e83af9fb9eb2c57761449a902b0d55fddef6f8d651fe1035b7d4bd", null ],

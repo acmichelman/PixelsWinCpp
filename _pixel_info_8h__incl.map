@@ -1,8 +1,14 @@
 <map id="Systemic/Pixels/PixelInfo.h" name="Systemic/Pixels/PixelInfo.h">
-<area shape="rect" id="node1" title="Definition of the PixelInfo class." alt="" coords="91,5,270,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,86,60,111"/>
-<area shape="rect" id="node3" title=" " alt="" coords="85,86,146,111"/>
-<area shape="rect" id="node4" href="$_ble_types_8h.html" title="Common types used across the Systemic::BluetoothLE namespace." alt="" coords="171,79,321,119"/>
-<area shape="rect" id="node6" href="$_pixel_types_8h.html" title="Common types used across the Systemic::Pixel namespace." alt="" coords="345,86,440,111"/>
-<area shape="rect" id="node5" title=" " alt="" coords="289,167,350,192"/>
+<area shape="rect" id="Node000001" title="Definition of the PixelInfo class." alt="" coords="88,5,266,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,86,59,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,34,69,81,66,76,154,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="83,86,144,112"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,33,135,76,131,72,166,30"/>
+<area shape="rect" id="Node000004" href="$_ble_types_8h.html" title="Common types used across the Systemic::BluetoothLE namespace." alt="" coords="168,79,318,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="189,30,219,65,215,69,185,33"/>
+<area shape="rect" id="Node000006" href="$_pixel_types_8h.html" title="Common types used across the Systemic::Pixel namespace." alt="" coords="342,86,436,112"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="211,29,344,78,342,83,209,34"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="286,168,346,193"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="263,118,296,154,293,158,259,122"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="380,114,339,158,336,154,376,111"/>
 </map>

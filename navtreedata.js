@@ -25,15 +25,10 @@
 var NAVTREE =
 [
   [ "C++ Pixels Library For Windows", "index.html", [
-    [ "C++ Pixels Dice Library For Windows", "index.html", [
-      [ "Foreword", "index.html#autotoc_md1", null ],
-      [ "Overview", "index.html#autotoc_md2", null ],
-      [ "Documentation", "index.html#autotoc_md3", null ],
-      [ "License", "index.html#autotoc_md4", null ]
-    ] ],
-    [ "Modules", "modules.html", "modules" ],
+    [ "C++ Pixels Dice Library For Windows", "index.html", "index" ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Packages", "namespaces.html", [
-      [ "Package List", "namespaces.html", null ],
+      [ "Package List", "namespaces.html", "namespaces_dup" ],
       [ "Package Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
@@ -64,7 +59,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_ble_types_8h.html",
-"class_systemic_1_1_bluetooth_l_e_1_1_peripheral.html#afac92a7222095bfa982685ba9f690327"
+"class_systemic_1_1_bluetooth_l_e_1_1_manufacturer_data.html",
+"dir_2ad902c4f39ff34ee24920b642592237.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
